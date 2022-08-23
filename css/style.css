@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Cardo:400,400i,700|Lora:400,400i,700,700i");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-body {
+html {
+  scroll-behavior: smooth;
+}
 
+body {
   padding: 0;
   margin: 0;
   font-size: 14px;
@@ -127,7 +130,6 @@ a {
 a:hover {
   text-decoration: none;
   -webkit-transition: 0.5s;
-  opacity: 0.8;
   transition: 0.5s;
 }
 
@@ -1920,7 +1922,7 @@ ul {
 
 
 .main_menu .main-menu-item ul li a {
-  color: #1e1e1e !important;
+  color: #fff !important;
   font-size: 16px;
   padding: 0px 22px !important;
   font-weight: 600;
@@ -1955,7 +1957,7 @@ ul {
 }
 
 .home_menu {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -2277,6 +2279,7 @@ ul {
   font-weight: 500;
 }
 
+/* 
 .banner_part .banner_text h1 {
   font-size: clamp(1.25rem, 0.734rem + 2.58vw, 3.313rem);
   font-family: "Cardo", serif;
@@ -2284,7 +2287,7 @@ ul {
   margin-bottom: 15px;
   line-height: 1.273;
   color: #323338;
-}
+} */
 
 /* @media (max-width: 576px) {
   .banner_part .banner_text h1 {
@@ -6315,7 +6318,7 @@ h6 {
 
 
 .logo {
-  width: 20%;
+  width: 27%;
 }
 
 .navbar {
@@ -6341,7 +6344,7 @@ h6 {
 .banner_part .align-items-center {
   position: absolute;
   top: 50%;
-  z-index: 10;
+  z-index: 20;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -6370,7 +6373,7 @@ h6 {
 .order h2 {
   margin: 2rem 0;
   color: #ff6426;
-  font-size : clamp(1.25rem, 0.938rem + 1.56vw, 2.5rem);
+  font-size: clamp(1.25rem, 0.938rem + 1.56vw, 2.5rem);
 }
 
 .pref p {
@@ -6413,19 +6416,62 @@ h6 {
 .online button:hover {
   transform: translateY(-5px);
 }
+
 @media (max-width: 991px) {
   .banner_part {
     height: fit-content;
   }
+
   .banner_part .banner_text p {
     margin: 0;
   }
 }
+.carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.home_menu.menu_fixed .nav-link {
+  color: #1e1e1e !important;
+}
+
+.banner-btn {
+  z-index: 20;
+  cursor: pointer;
+  font-size: clamp(0.938rem, 0.781rem + 0.78vw, 1.563rem);
+  border: 0;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  background-color: #ff6426;
+  color: #fff;
+  border-radius:0.3rem;
+  transition: all 0.2s ease-in-out;
+}
+.banner-btn:hover {
+  transform: translateY(-5px);
+}
+.mobileSlider {
+  display: none;
+}
 @media (max-width: 768px) {
-  .banner_part .banner_text p {
+  .online .onlineDiv {
+    margin-bottom: 2rem;
+  }
+  .desktopSlider {
     display: none;
   }
-.online .onlineDiv {
-  margin-bottom: 2rem;
-}
+  .mobileSlider {
+    display: block;
+  }
+  .online .row {
+    margin: 0 !important;
+  }
+  .main_menu .main-menu-item ul li a {
+    color: #1e1e1e !important;
+  }
 }
