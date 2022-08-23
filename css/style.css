@@ -1965,7 +1965,7 @@ ul {
 }
 
 .menu_fixed {
-  position: fixed;
+  position: fixed !important;
   z-index: 9999 !important;
   width: 100%;
   background-color: #fff;
@@ -6038,13 +6038,13 @@ h6 {
 
 .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h2 {
   color: #fff;
-  font-size: 45px;
+  font-size: clamp(1.25rem, 0.938rem + 1.56vw, 2.5rem);
   font-weight: 600;
-  margin-bottom: 10px;
+  margin: 10rem 0;
   text-transform: capitalize;
 }
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h2 {
     font-size: 35px;
   }
@@ -6060,7 +6060,7 @@ h6 {
   .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h2 {
     font-size: 40px;
   }
-}
+} */
 
 .breadcrumb .breadcrumb_iner .breadcrumb_iner_item p {
   font-size: 15px;
@@ -6349,7 +6349,7 @@ h6 {
   transform: translate(-50%, -50%);
 }
 
-.order .pref {
+ .pref {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6442,6 +6442,7 @@ h6 {
 
 .banner-btn {
   z-index: 20;
+  position: relative;
   cursor: pointer;
   font-size: clamp(0.938rem, 0.781rem + 0.78vw, 1.563rem);
   border: 0;
@@ -6449,11 +6450,30 @@ h6 {
   padding: 1rem 2rem;
   background-color: #ff6426;
   color: #fff;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
   border-radius:0.3rem;
   transition: all 0.2s ease-in-out;
 }
+.banner-btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  inset: 0 0 0 0;
+  border-radius: inherit;
+  z-index: -1;
+  transform: translateY(100%);
+  transition: all 0.2s ease-in-out;
+}
 .banner-btn:hover {
+  transition-delay: 0.1s;
   transform: translateY(-5px);
+  color: #1e1e1e;
+}
+.banner-btn:hover:before {
+  transform: translateY(0);
 }
 .mobileSlider {
   display: none;
@@ -6474,4 +6494,18 @@ h6 {
   .main_menu .main-menu-item ul li a {
     color: #1e1e1e !important;
   }
+  .home_menu {
+    position: relative;
+  }
+}
+.footer_1 p:nth-child(2) ,
+.footer_1 p:nth-child(5) {
+  color: #ff6426;
+  font-weight: 600;
+}
+.lunch {
+  padding: 3rem 0;
+}
+.lunchDiv {
+  width: 20%;
 }
