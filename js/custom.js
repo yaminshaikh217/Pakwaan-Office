@@ -166,4 +166,5 @@
       enabled: true,
     },
   });
+
 })(jQuery);
