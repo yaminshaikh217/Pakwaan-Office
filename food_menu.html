@@ -53,7 +53,7 @@
                                     <a class="nav-link" href="food_menu.html">Menu</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="special.html">Special</a>
+                                    <a class="nav-link" href="catering.html">Catering</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Contact</a>
@@ -100,6 +100,8 @@
             </div>
         </div>
     </section>
+    <div id='order-widget'></div>
+
     <!-- footer part start-->
     <footer class="footer-area">
         <div class="container">
@@ -161,6 +163,23 @@
         </div>
     </footer>
     <!-- footer part end-->
+
+    <script>
+        !function () {
+            var t;
+            if (t = window.orderops || [], !t.init) return t.invoked ? void (window.console && console.error && console.error('Restaurant Ops snippet included twice.')) : (t.invoked = !0,
+                t.load = function () {
+                    var n, o;
+                    o = document.createElement('script'),
+                        o.type = 'text/javascript',
+                        o.async = !0,
+                        o.crossorigin = 'anonymous',
+                        o.src = 'https://orders.restaurantops.co/v2/widgets.js?token=Z_KJIGbe_QTf3cfKtXonDg'
+                    n = document.getElementsByTagName('script')[0], n.parentNode.insertBefore(o, n);
+                }, t.load()
+            )
+        }();
+    </script>
 
     <!-- jquery -->
     <script src="js/jquery-1.12.1.min.js"></script>
